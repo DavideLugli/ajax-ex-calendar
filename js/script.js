@@ -17,33 +17,38 @@ $(document).ready(
     var dataIniziale = moment("2018-01-01", "YYYY-MM-DD");
     var giorni = dataIniziale.daysInMonth();
     // console.log(giorni);
+    for (var i = 1; i <= 31; i++) {
+      // handlebars
+      var source = $("#entry-template").html();
+      var template = Handlebars.compile(source);
+      var aDay = {
+        day: i,
+        month: 'Gennaio',
+      };
+      var html = template(aDay);
+      $('.calendar-wrapper .month').append(html);
+      // chiamata api
+      $.ajax({
+        'url': 'https://flynn.boolean.careers/exercises/api/holidays',
+        'method': 'GET',
+        'data': {
+          "year": "2018",
+          "month": "0"
+        },
+        'success': function(risposta) {
+          if (true) {
 
-    // chiamata api
-    $.ajax({
-      'url': 'https://flynn.boolean.careers/exercises/api/holidays',
-      'method': 'GET',
-      'data': {
-        "year": "2018",
-        "month": "0"
-      },
-      'success': function(risposta) {
-        // console.log(risposta.response);
+          }
 
-      },
-      'error': function(request, state, errors) {
+        },
+        'error': function(request, state, errors) {
 
-      },
-    });
-    // fine chiamata api
+        },
+      });
+      // fine chiamata api
+    }
 
-    // handlebars
-    // var source = $("#entry-template").html();
-    // var template = Handlebars.compile(source);
-    // var aDay = {
-    //   day: '',
-    //   month: '',
-    // };
-    // var html = template(aDay);
-    // $('.calendar-wrapper .month').append(html);
+
+
   }
 );
