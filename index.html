@@ -15,6 +15,23 @@
 </head>
 
 <body>
+  <div class="calendar-wrapper">
+    <h2 id="current-month">
+      Gennaio <span class="year">2018</span>
+    </h2>
+    <div class="command-wrapper">
+      <button class="prev" type="button" name="button">Precedente</button>
+      <button class="next" type="button" name="button">Sucessivo</button>
+    </div>
+    <ul class="month">
+
+    </ul>
+  </div>
+  <!-- template handlebars -->
+  <script id="entry-template" type="text/x-handlebars-template">
+    <li> <span>{{day}}</span> <span>{{month}}</span></li>
+  </script>
+  <!-- template handlebars -->
 
   <script src="js/script.js" charset="utf-8"></script>
 </body>
