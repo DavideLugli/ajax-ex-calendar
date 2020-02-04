@@ -18,7 +18,7 @@
 
 <body>
   <div class="calendar-wrapper">
-    <h2 class="holiday" id="current-month">
+    <h2 class="holiday">
 
     </h2>
     <div class="command-wrapper">
@@ -31,7 +31,8 @@
   </div>
   <!-- template handlebars -->
   <script id="entry-template" type="text/x-handlebars-template">
-    <li class="month-day" data-actual-date="{{actual-date}}">{{day}}</li>
+    <li class="day" data-date-complete="{{dateComplete}}">
+      <span class="data">{{day}} {{month}}</span> <span class="nome-festivita"></span>
   </script>
   <!-- template handlebars -->
 

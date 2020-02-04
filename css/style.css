@@ -10,8 +10,10 @@ body {
 }
 
 .calendar-wrapper {
+  padding-top: 20px;
   width: 80%;
   height: 100%;
+  min-height: 700px;
   background-color: BlueViolet;
   margin: 0 auto;
   display: flex;
